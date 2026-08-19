@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Header from "../../../components/Header/Header";
+import Header from "../../../components/header/Header";
 import CommonButton from "../../../components/common-button/CommonButton";
 
 import ImageUploader from "../components/ImageUploader";

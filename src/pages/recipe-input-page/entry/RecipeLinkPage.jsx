@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import Header from "../../../components/Header/Header";
+import Header from "../../../components/header/Header";
 import CommonButton from "../../../components/common-button/CommonButton";
 
 import SaveSuccessModal from "../components/SaveSuccessModal";
@@ -31,11 +31,7 @@ const RecipeLinkPage = () => {
 
   return (
     <div className="recipe-link-page">
-      <Header
-        title="레시피 입력"
-        onBack={() => navigate(-1)}
-      />
-
+      <Header title="레시피 입력" onBack={() => navigate(-1)}/>
       <main className="recipe-link-page__main">
         <section className="recipe-link-page__section">
           <h2 className="recipe-link-page__title">
