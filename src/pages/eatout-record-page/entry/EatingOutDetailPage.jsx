@@ -1,14 +1,16 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { useState } from 'react';
 
 import Header from "../../../components/header/Header";
 import CommonButton from "../../../components/common-button/CommonButton";
-
+import SaveSuccessModal from '../../../components/save-sucess-modal/SaveSuccessModal'
 import NutritionCard from "../components/NutritionCard";
 import RecordInputCard from "../components/RecordInputCard";
 
 import "./EatingOutDetailPage.css";
 
 const EatingOutDetailPage = () => {
+  const [isSaveSuccessOpen, setIsSaveSuccessOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const foodName = location.state?.foodName || "비빔밥";
@@ -16,6 +18,8 @@ const EatingOutDetailPage = () => {
 
   const handleSave = () => {
     console.log("외식 기록 저장");
+
+    setIsSaveSuccessOpen(true);
   };
 
   return (
@@ -43,6 +47,13 @@ const EatingOutDetailPage = () => {
           기록 저장
         </CommonButton>
       </div>
+       <SaveSuccessModal
+        isOpen={isSaveSuccessOpen}
+        onClose={() =>
+        setIsSaveSuccessOpen(false)
+       }
+        onView={() => navigate('/record')}
+        />
     </div>
   );
 };
